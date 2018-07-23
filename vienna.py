@@ -12,6 +12,10 @@ class SearchEngine(object):
         self.suggested_advices = set()
         self.suggested_words = set()
 
+    def reset(self):
+        self.suggested_advices = set()
+        self.suggested_words = set()
+
     def get_advices(self, variant):
         variant = variant.lower()
         return [adv for adv in self.DICT.suggest(variant) if adv.lower().startswith(variant)]
